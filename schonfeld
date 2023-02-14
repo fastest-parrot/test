@@ -1,0 +1,27 @@
+def length(string:str):
+    total = []
+    for i,x in enumerate(string):
+        if x.isalpha():
+           num = '' 
+           for y in string[i+1:]:
+                if not y.isalpha():
+                    num += y
+                else:
+                    total.append(int(num))
+                    break
+    return sum(total)
+
+def count(string:str, letter:str):
+    total = 0
+    for i,x in enumerate(string):
+        num = '' 
+        if x.isalpha() and x == letter:
+           for y in string[i+1:]:
+                if not y.isalpha():
+                   num += y
+                   if y == string[-1]:
+                        total = total + int(num)
+                else:
+                    total = total + int(num)
+                    break
+    return total
