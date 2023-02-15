@@ -12,7 +12,7 @@ def read_string(string:str):
 def __length__(string:str):
     letter_dict = {}
     current_letter = ''
-    for x in read_string(test2):
+    for x in read_string(string):
         if x[1].isalpha(): ## letter has started
             letter_dict[x[1]] = ''
             current_letter = x[1]
@@ -23,7 +23,7 @@ def __length__(string:str):
 def count(string:str, letter:str):
     letter_dict = {}
     current_letter = ''
-    for x in read_string(test2):
+    for x in read_string(string):
         if x[1].isalpha(): ## letter has started
             letter_dict[x[1]] = ''
             current_letter = x[1]
