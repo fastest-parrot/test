@@ -1,29 +1,9 @@
-def length(string:str):
-    total = []
-    for i,x in enumerate(string):
-        if x.isalpha():
-           num = '' 
-           for y in string[i+1:]:
-                if not y.isalpha():
-                    num += y
-                    print(num)
-                    if string[-1] == y:
-                        total.append(int(num))
-                else:
-                    total.append(int(num))
-                    break
-    return sum(total)
-def count(string:str, letter:str):
-    total = 0
-    for i,x in enumerate(string):
-        num = '' 
-        if x.isalpha() and x == letter:
-           for y in string[i+1:]:
-                if not y.isalpha():
-                   num += y
-                   if y == string[-1]:
-                        total = total + int(num)
-                else:
-                    total = total + int(num)
-                    break
-    return total
+def read_string(string:str):
+    for i in range(0, len(string)):
+        if i == 0:
+            val = None, string[i], string[i+1]
+        elif i < len(string)-1:
+            val = string[i-1], string[i], string[i+1]
+        else:
+            val = string[i-1],  string[i], None
+        yield val
