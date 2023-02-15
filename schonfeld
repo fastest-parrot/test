@@ -6,11 +6,13 @@ def length(string:str):
            for y in string[i+1:]:
                 if not y.isalpha():
                     num += y
+                    print(num)
+                    if string[-1] == y:
+                        total.append(int(num))
                 else:
                     total.append(int(num))
                     break
     return sum(total)
-
 def count(string:str, letter:str):
     total = 0
     for i,x in enumerate(string):
