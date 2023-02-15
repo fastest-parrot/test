@@ -7,3 +7,26 @@ def read_string(string:str):
         else:
             val = string[i-1],  string[i], None
         yield val
+
+
+def __length__(string:str):
+    letter_dict = {}
+    current_letter = ''
+    for x in read_string(test2):
+        if x[1].isalpha(): ## letter has started
+            letter_dict[x[1]] = ''
+            current_letter = x[1]
+        if x[1].isnumeric():
+            letter_dict[current_letter] += str(x[1])
+    return sum(int(v) for k,v in letter_dict.items())
+
+def count(string:str, letter:str):
+    letter_dict = {}
+    current_letter = ''
+    for x in read_string(test2):
+        if x[1].isalpha(): ## letter has started
+            letter_dict[x[1]] = ''
+            current_letter = x[1]
+        if x[1].isnumeric():
+            letter_dict[current_letter] += str(x[1])
+    return int(letter_dict.get(letter, 0))
